@@ -1,0 +1,112 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Resume</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <h1>Your Resume</h1>
+
+    <form id="resumeEditForm">
+        <label for="editName">Name:</label>
+        <input type="text" id="editName" name="name" required>
+
+        <label for="editEmail">Email:</label>
+        <input type="email" id="editEmail" name="email" required>
+
+        <label for="editExperience">Experience:</label>
+        <textarea id="editExperience" name="experience"></textarea>
+
+        <label for="editEducation">Education:</label>
+        <textarea id="editEducation" name="education"></textarea>
+
+        <button type="button" id="saveChanges">Save Changes</button>
+    </form>
+
+    <h2>Resume Preview</h2>
+    <div id="resumePreview"></div>
+
+    <button id="downloadPdf">Download as PDF</button>
+    <button id="shareResume">Share Resume</button>
+
+    <script>
+        // Function to retrieve query parameters from the URL
+        function getQueryParams() {
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+
+            return {
+                name: urlParams.get('name'),
+                email: urlParams.get('email'),
+                experience: urlParams.get('experience'),
+                education: urlParams.get('education')
+            };
+        }
+
+        // Load the query parameters
+        const { name, email, experience, education } = getQueryParams();
+
+        // Populate the form fields with the data from URL parameters
+        document.getElementById('editName').value = name || '';
+        document.getElementById('editEmail').value = email || '';
+        document.getElementById('editExperience').value = experience || '';
+        document.getElementById('editEducation').value = education || '';
+
+        // Function to update the resume preview
+        function updateResumePreview() {
+            const previewHTML = `
+                <h2>${document.getElementById('editName').value}</h2>
+                <p>Email: ${document.getElementById('editEmail').value}</p>
+                <h3>Experience</h3>
+                <p>${document.getElementById('editExperience').value}</p>
+                <h3>Education</h3>
+                <p>${document.getElementById('editEducation').value}</p>
+            `;
+
+            document.getElementById('resumePreview').innerHTML = previewHTML;
+        }
+
+        // Initially load the preview
+        updateResumePreview();
+
+        // Update the preview when the form fields change
+        const formFields = document.querySelectorAll('#resumeEditForm input, #resumeEditForm textarea');
+        formFields.forEach(field => {
+            field.addEventListener('input', updateResumePreview);
+        });
+
+        // Download the resume as a PDF
+        document.getElementById('downloadPdf').addEventListener('click', () => {
+            const resumeElement = document.getElementById('resumePreview');
+            const opt = {
+                margin: 1,
+                filename: 'Resume.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+            };
+            html2pdf().from(resumeElement).set(opt).save();
+        });
+
+        // Share resume using Web Share API or generate a shareable link
+        document.getElementById('shareResume').addEventListener('click', () => {
+            const shareData = {
+                title: 'My Resume',
+                text: 'Check out my resume',
+                url: window.location.href // Share the current page with all resume data in the URL
+            };
+
+            if (navigator.share) {
+                navigator.share(shareData)
+                    .then(() => console.log('Successfully shared'))
+                    .catch((err) => console.error('Error sharing:', err));
+            } else {
+                alert(`You can share this link: ${window.location.href}`);
+            }
+        });
+    </script>
+</body>
+</html>

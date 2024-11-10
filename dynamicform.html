@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <link rel="stylesheet" href="index.css">
+    <title>RESUME-BUILDER</title>
+</head>
+<body>
+    <div class="container"   >
+    <h1 style="font-size: 60px; margin-top: 0;"><span style="font-size: 90px;" >O</span>nline Dynamic Resume Maker :</h1>
+    <h1 style="margin-left: 30%;margin-right: 28%;">Fill the form below to Generate Your Resume!!</h1>
+    <form  class="Staticalform" id="resumeform">
+        <fieldset><legend>  Basic Information </legend>
+            <label for="name"><p >Enter Your Name:</p><label>
+        <input type="text" size="40" maxlength="30"  name="name" id="name">
+    <label for="contact"><p > Contact No:</p></label>
+        <input  type="tel" size="40" maxlength="30" name="contact" id="contact" required>
+
+    <label for="Email">
+    <p>
+     Email:</p></label>
+        <input  id="Email" type="email" size="40" maxlength="30" name="Email" required>
+    <label for="Picture">
+    <p> Upload Your Profile Picture:</p></label>
+        <input id="Picture" type="file"  name="Picture"  required/>
+    </label>
+        
+    </fieldset>
+
+    <fieldset><label for="Education">
+        Education:</label>
+        <select id="Education" name="Education" required>
+            <option value="Graduate"> Graduate</option>
+            <option value="intermediate">Intermediate</option>
+            <option value="Olevels">Olevels/Alevels</option>
+            <option value="Matric">Matric</option> 
+            </select> <br>
+        
+       <label for="Furthur"> <p>Furthur Education (If any)</p></label>
+        <textarea  placeholder="Furthur Education (If any)"name="Furthur" id="Furthur" > </textarea>
+    </fieldset>
+    <fieldset>
+        <label for="skill" id="skillname">
+        Skills:</label>
+        <input type="checkbox" name="skill" id="Skills" value="Programmer">Programmer
+        <input type="checkbox" name="skill" id="Skills" value="HTML(Hypertext Mark Up Language)"> HTML
+        <input type="checkbox" name="skill" id="Skills" value="Css(Cascading Style Sheet)">Css(Cascading Style Sheet)
+        <input type="checkbox" name="skill" id="Skills" value="Cloud Native Engineer">Cloud Native Engineer
+        <input type="checkbox" name="skill" id="Skills" value="Graphic Designer">Graphic Designer
+    </fieldset><br>
+    <fieldset>
+        <label for="otskill" > Other skill:</label>
+<input type="text" name="otskill" id="otskill">  </fieldset>
+    <fieldset>
+       <label for="Experience">Experience (if any): </label><br>
+         <textarea name="Experience" id="Experience"  placeholder="Experience" required></textarea> <br><br>
+       
+    </fieldset>
+    <button type="submit" id='submitbutton'> Create Resume</button></div>
+    </form>
+   
+
+
+<div id="resumepage" class="hidden">
+<div id="resumecontent">
+<img  id='resumepic'src="" alt="picture">
+<h1 class="inline">Name:</h1>
+<p id="resumename" class="font-size"></p>
+<h1 class="inline">Contact Details: </h1>
+<p id="resumecontact" class="font-size"></p>
+<p id="resumeemail" class="font-size"></p>
+<h1 class="inline">Education:</h1>
+<p id="resumeeducation" class="font-size"></p>
+<p id="resumefurthureducation" class="font-size"></p>
+<h1 class="inline">Skills:</h1>
+<p id="resumeskills" class="font-size"></p>
+<p id="resumefurthurskills" class="font-size"></p>
+<h1 class="inline">Experience:</h1>
+<p id="resumeexperience" class="font-size"></p>
+<div id="dynamic">
+<button id="edit" class="editing"> Edit</button>
+<button id="share" class="editing"> Share</button>
+<button id="download" class="editing">Download-PDF</button></div>
+</div></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

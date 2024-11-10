@@ -1,0 +1,171 @@
+#Staticbody{background-color: black;}
+/* #resumebutton{ 
+    margin-top:18% ;
+    margin-left : 30%;
+    position: relative;
+    justify-content: center;
+    block-size: 80px;
+    border-radius: 70%;
+    align-items: center;
+font-display: flex;
+border-color: rgb(0, 0, 0);
+background-color: antiquewhite;
+-ms-text-size-adjust: auto ;
+font-display: flex;
+color: black;} */
+
+
+.welcome{text-align: center;
+align-content: center;
+margin-top: 45px;}
+/* *{
+    background-color: silver;
+} */
+a{background:none;
+text-decoration:none;;
+color: rgb(41, 41, 86);
+font-weight: bolder;
+font-size: medium;}
+/* #resumebutton2{ 
+    margin-top:18% ;padding-left: 10px;
+    justify-content: center;
+    block-size: 80px;
+    border-radius: 50%;
+    align-items: center;
+font-display: flex;
+border-color: rgb(0, 0, 0);
+background-color: antiquewhite;
+-ms-text-size-adjust: auto ;
+font-display: flex;
+color: black;} */
+.linking{display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 5%;
+    align-items: center;}
+
+#resumebutton{
+    margin-top: 5%;
+    width: 1400px;
+height: 70px; border-radius: 10px
+}
+
+
+
+#resumebutton2{
+    margin-top: 10%;
+    width: 1400px;
+height: 70px; border-radius: 10px
+}
+
+#Dynamicallycreated{margin-top: 10%;
+    width: 1400px;
+height: 70px; border-radius: 10px;}
+
+
+
+#picture{block-size: 400px;}
+
+.main{display: flex;
+    gap: 10px;margin: 80px;padding: 20px;;background-color: beige;
+    padding-right: 0%;
+    border-radius: 15px;
+    border-color: black;
+}
+#picture{border-radius: 15px;
+border-color: aliceblue;}
+.pictureinfo{
+    flex-grow: 0;
+    flex-shrink: auto;
+    border: 10px;
+flex-basis: 450px;}
+#toggleelement{margin-left: 80px;
+    width: 40%;
+    
+    font-size:medium;
+    border-radius: 30px;
+    background-color: lemonchiffon;font-family: Georgia, 'Times New Roman', Times, serif;
+    
+}
+#togglebutton{
+   margin-left: 5%;
+    height: 50px;
+    width: 400px;
+    border-radius: 10%;
+    text-decoration-thickness: 70px;
+}
+    
+#indexbody{background-color: cadetblue ;}
+
+.Staticalform{margin-left: 30%;margin-right: 30%;
+background-color: burlywood; }
+
+
+body{background-color: yellowgreen;}
+.hidden{
+    display: none;
+}
+
+#submitbutton{height: 40px; width: 150px;align-items: center;margin-left: 30%;margin-right: 30%;border-radius: 50px;background-color: grey;}
+#resumepage{
+
+    width:500px;
+    height: 300px;
+    margin: 0%;
+    position: relative;
+    top: 50px;
+    left:400px;
+background-color:darkolivegreen;}
+    
+.unhidden{display: block;}
+
+
+#resumepic{
+    position: relative;
+    top: 20px;
+    align-self: center;
+    border-radius: 50%;
+    width:250px;
+    height:250px
+}
+
+#resumecontent{
+    width: 800px;
+    border: 10px solid black;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1rem;
+    flex-shrink: 1rem;
+    background-color: darkkhaki;
+}
+#dynamic{
+    display: flex;
+    justify-content: space-evenly;
+}
+.font-size{
+    font-size:30px;
+    font-family: cursive;
+}
+.editing{
+    font-size: 10px;
+    width:100px ;
+    height: 50px;
+    border-radius: 15px;
+}
+
+
+#resumecontent {
+    width: 100%;
+    max-width: 700px;
+    max-height: fit-content;
+    padding: 10px;
+    font-size: 12px; /* Decrease font size slightly for better fit */
+}
+#resumepic {
+    width: 100px; /* Reduce image size */
+    height: 100px;
+}
+.font-size {
+    font-size: 20px; /* Reduce font size for better layout fit */
+}
